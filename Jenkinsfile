@@ -55,11 +55,11 @@ pipeline {
     sh """
     export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     export PATH=\$JAVA_HOME/bin:\$PATH
-    mvn sonar:sonar \
-      -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-      -Dsonar.dependencyCheck.jsonReportPath=target/dependency-check-report.json \
-      -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html \
-      -Dsonar.projectName=demodevsecops
+    mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
+  -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+  -Dsonar.dependencyCheck.jsonReportPath=target/dependency-check-report.json \
+  -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html \
+  -Dsonar.projectName=demodevsecops
     """
     }
       }
