@@ -42,7 +42,7 @@ pipeline {
        sh """
        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
        export PATH=\$JAVA_HOME/bin:\$PATH
-       mvn org.owasp:dependency-check-maven:check -DnvdApiKey=\${NVD_KEY}
+       mvn org.owasp:dependency-check-maven:check -DnvdApiKey=\${NVD_KEY} -DautoUpdate=false
        """
      }
    }
