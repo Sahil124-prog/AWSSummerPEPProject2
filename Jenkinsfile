@@ -14,15 +14,15 @@ pipeline {
     }
   
    stage('Stage I: Build') {
-      steps {
-        echo "Building Jar Component ..."
-        sh """
-        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-        export PATH=\$JAVA_HOME/bin:\$PATH
-        mvn clean package
-        """
-      }
-    }
+   steps {
+     echo "Building Jar Component ..."
+     sh """
+     export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+     export PATH=\$JAVA_HOME/bin:\$PATH
+     mvn clean package -DskipTests
+     """
+   }
+ }
 
    stage('Stage II: Code Coverage ') {
       steps {
