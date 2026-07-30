@@ -99,13 +99,14 @@ pipeline {
     }
           
    stage('Stage VIII: Smoke Test ') {
-      steps { 
-        echo "Smoke Test the Image"
-        sh "docker run -d --name smokerun -p 8080:8080 rajputsahil786/democicd"
-        sh "sleep 90; ./check.sh"
-        sh "docker rm --force smokerun"
-        }
-    }
+   steps { 
+     echo "Smoke Test the Image"
+     sh "docker run -d --name smokerun -p 8080:8080 rajputsahil786/democicd"
+     sh "chmod +x check.sh"
+     sh "sleep 90; ./check.sh"
+     sh "docker rm --force smokerun"
+     }
+  }
 
   }
 }
