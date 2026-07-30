@@ -26,7 +26,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
         <!-- dependency versions -->
         <com.google.guava.guava.version>21.0</com.google.guava.guava.version>
         <io.springfox.springfox-swagger2>2.3.1</io.springfox.springfox-swagger2>
@@ -128,7 +128,7 @@
 	    <plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.6.201602180812</version>
+				<version>0.8.12</version>
 				<configuration>
                                  <dataFile>${project.build.directory}/jacoco.exec</dataFile>
                                  <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
